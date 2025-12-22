@@ -1,4 +1,6 @@
 score = 0
+question_number = 0 
+
 questions = [
     {"question": "What is the capital of France?", "answer": "paris"},
     {"question": "What is 7 + 8?", "answer": "15"},
@@ -13,12 +15,14 @@ questions = [
 ]
 
 for q in questions:
+    question_number +=1 
     user_answer = input(q["question"] + " ").strip().lower()
     if user_answer == q["answer"]:
         print ("Correct!")
         score += 1
     else:
         print(f"Wrong! The correct answer is {q['answer']}.")
+    print(f"Your current score is {score} out of {question_number}.")
 print(f"Your final score is {score} out of {len(questions)}.")
 
 
